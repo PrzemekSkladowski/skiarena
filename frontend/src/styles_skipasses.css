@@ -1,0 +1,85 @@
+/* styles.css */
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+header {
+  background-color: #327a8b;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  font-size: 24px;
+}
+
+footer {
+  background-color: #1f3935;
+  color: white;
+  padding: 10px;
+  display: flex; /* Make the footer a flex container */
+  justify-content: center; /* Center the div horizontally */
+}
+
+footer div {
+  width: 80%;
+}
+
+hr {
+  margin: 20px 0;
+  border: 0;
+  border-top: 1px solid #ddd;
+}
+
+.table {
+  width: 100%;
+  margin: 20px 0;
+}
+
+.table th {
+  cursor: pointer;
+}
+
+.table th, .table td {
+  text-align: center;
+  vertical-align: middle;
+}
+
+.table tbody tr.inactive {
+  background-color: #dcdcdc;
+  opacity: 0.6;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.btn-add {
+  background-color: #41ba6f;
+  color: white;
+}
+
+.btn-add:hover {
+  background-color: #276d42;
+  color: white;
+}
+
+.btn-edit {
+  background-color: #d1913e;
+}
+
+.btn-edit:hover {
+  background-color: #8b612b;
+}
+
+.btn-remove {
+  background-color: #77291b;
+  color: white;
+}
+
+.btn-remove:hover {
+  background-color: #5b1f15;
+  color: white;
+}
