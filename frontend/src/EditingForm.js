@@ -18,9 +18,7 @@ const EditingForm = ({ editingSkipass, editSkipass, cancelEditing }) => {
             id: editingSkipass.id,
             skier_name: editingSkipass.skier_name,
             skipass_type: editingSkipass.skipass_type,
-            // purchase_date: new Date(editingSkipass.purchase_date).toISOString().slice(0, 16),
             purchase_date: toLocalTimezone(new Date(editingSkipass.purchase_date)),
-            // expiry_date: new Date(editingSkipass.expiry_date).toISOString().slice(0, 16),
             expiry_date: toLocalTimezone(new Date(editingSkipass.expiry_date)),
             purchase_price: editingSkipass.purchase_price,
         });
@@ -33,7 +31,8 @@ const EditingForm = ({ editingSkipass, editSkipass, cancelEditing }) => {
 
     const handleEditingFormSubmit = (e) => {
         e.preventDefault();
-        editSkipass(editedSkipass);
+        let skipassToSave = {...editedSkipass, purchase_date: toUTC(editedSkipass.purchase_date), expiry_date: toUTC(editedSkipass.expiry_date)};
+        editSkipass(skipassToSave);
         setEditedSkipass({
             skier_name: '',
             skipass_type: '',
