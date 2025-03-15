@@ -3,6 +3,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 import './styles_skipasses.css';
 import AddingForm from './AddingForm';
 import EditingForm from './EditingForm';
+import { toUTC } from './common';
 
 const SkipassList = () => {
     const [skipasses, setSkipasses] = useState([]);
@@ -23,6 +24,9 @@ const SkipassList = () => {
     const fetchSkipasses = useCallback(() => {
         axios.get('http://localhost:8000/skipasses/')
             .then(res => {
+                for (let skipass of res.data) {
+                    if (skipass.is_active && skipass.expiry_date < toUTC(new Date())) skipass.is_active = false;
+                }
                 setSkipasses(res.data);
             })
             .catch(err => {
