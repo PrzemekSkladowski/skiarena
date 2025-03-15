@@ -52,6 +52,10 @@ hr {
   opacity: 0.6;
 }
 
+.table tbody tr:hover {
+  background-color: #b1dec6;
+}
+
 .form-group {
   margin-bottom: 20px;
 }
