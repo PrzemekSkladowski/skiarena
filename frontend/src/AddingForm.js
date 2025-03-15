@@ -50,7 +50,7 @@ const AddingForm = ({ addSkipass }) => {
             if (!skipassOffer) skipassOffer = skipassOffers[0];
             newDate.setDate(newDate.getDate() + skipassOffer.duration_days);
             newDate.setHours(newDate.getHours() + skipassOffer.duration_hours);
-            let expiry_date = newDate.toISOString().slice(0, 16);
+            let expiry_date = toLocalTimezone(newDate);
             setNewSkipass({ ...newSkipass, purchase_date: value, expiry_date: expiry_date });
         }
     };
